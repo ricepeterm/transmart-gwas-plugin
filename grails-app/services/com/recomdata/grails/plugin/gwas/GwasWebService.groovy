@@ -333,10 +333,10 @@ class GwasWebService {
 		{
 			def tokens=getSecureTokensWithAccessForUser(user);
 			//tokens.each{ k, v -> log.debug( "${k}:${v}") }
-			if(tokens.containsKey(study_id)) //null tokens are assumed to be unlocked
-			{
-					return tokens[study_id]; //found access for this token so put in access level
-			}
+			if(tokens.containsKey("EXP:"+study_id)) //null tokens are assumed to be unlocked
+            {
+                   return tokens["EXP:"+study_id]; //found access for this token so put in access level
+            }
 			else {
 					return "Locked"; //didn't find authorization for this token
 				}
