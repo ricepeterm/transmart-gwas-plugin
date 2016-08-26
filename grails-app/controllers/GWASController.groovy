@@ -630,7 +630,7 @@ class GWASController {
         String solrScheme = grailsApplication.config.com.rwg.solr.scheme
         String solrHost = grailsApplication.config.com.rwg.solr.host
         String solrPath = grailsApplication.config.com.rwg.solr.path
-        log.info("SOLR " + solrScheme + solrHost + solrPath);
+        log.info("SOLR " + solrScheme + "://" +solrHost + solrPath);
         String solrRequestUrl = new URI(solrScheme, solrHost, solrPath, "", "").toURL()
 
         return solrRequestUrl
