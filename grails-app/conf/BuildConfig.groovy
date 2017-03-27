@@ -14,6 +14,7 @@ grails.project.dependency.resolution = {
     log "warn" // log level of Ivy resolver, either 'error', 'warn', 'info', 'debug' or 'verbose'
 	legacyResolve false
     repositories {
+        mavenRepo "file://${System.getProperty('user.home')}/m2local/etriksv3"
         mavenLocal()
         grailsCentral()
         mavenCentral()
@@ -28,15 +29,15 @@ grails.project.dependency.resolution = {
     plugins {
 		compile(':resources:1.2.1')
 		//// already included in biomart-domain
-                //compile(':transmart-java:16.1-SNAPSHOT')
+                //compile(':transmart-java:16.1')
 		//// already included in search-domain
-                //compile(':biomart-domain:16.1-SNAPSHOT')
+                //compile(':biomart-domain:16.1')
 		//// already included in folder-management
-                //compile(':search-domain:16.1-SNAPSHOT')
-		compile(':folder-management:16.1')
+                //compile(':search-domain:16.1')
+		compile(':folder-management:16.1.30')
 		//// already included in folder-management
-                //compile(':transmart-legacy-db:16.1-SNAPSHOT')
-		compile(':spring-security-core:2.0-RC2')
+                //compile(':transmart-legacy-db:16.1')
+		compile(':spring-security-core:2.0-RC5')
 		compile(':quartz:1.0-RC2')
         compile(':mail:1.0')
 		build(":release:3.1.1")
